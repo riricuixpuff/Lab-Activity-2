@@ -1,5 +1,3 @@
-
-
 public class Main {
 
    public static void printDetails(Vehicle vehicle){
@@ -50,6 +48,10 @@ public class Main {
                        
                        for (Vehicle currentVehicle: vehicles){
                        printDetails(currentVehicle);
+                       currentVehicle.moveForward();
+                       currentVehicle.moveBackward();
+                       currentVehicle.moveLeft();
+                       currentVehicle.moveRight();
                        System.out.println();
                        }
    
