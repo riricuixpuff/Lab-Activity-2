@@ -3,9 +3,14 @@ public class Main {
    public static void printDetails(Vehicle vehicle){
    vehicle.displayInfo();
    }
-   
+
+   public static void performService(Serviceable item){
+      item.service();
+   }
+
    public static void main(String[] ARGS){
-   //DEMO 1: A Parent refence holding a holding a child object
+   
+      //DEMO 1: A Parent refence holding a holding a child object
     System.out.println("===1 PARENT REFERENCE==="); 
     
     Vehicle vehicle = new Car ("Toyota", "Vios", 2023 , 4);
@@ -27,7 +32,12 @@ public class Main {
    vehicle  = new Motorcycle ("Suzuki", "Burgman Street 125 EX", 2024 , "4-stroke, single-cylinder, air-cooled, fuel-injected (SEP engine), 124cc");
    vehicle.displayInfo();
   
-   System.out.println(); 
+   System.out.println();
+   
+   Printer printer = new Printer();
+   printer.service();
+
+
    
    //DEMO 2 : One method accepts different vehicle sub is class-
    System.out.println("\n===2 METHOD PARAMETER==="); 
@@ -56,6 +66,17 @@ public class Main {
                        }
    
    
-   
+     //Activity 2.1: Create a polymorphic array of Serviceable objects and call the service() method for each object in the array.                
+      System.out.println("\n===4.INTERFACES===");
+
+      Serviceable [] serviceItems = {new Car ("Toyota", "Vios", 2023 , 4), 
+                       new Truck ("Isuzu", "NHR", 2024 , 4), 
+                       new Motorcycle ("Suzuki", "Burgman Street 125 EX", 2024 , "4-stroke, single-cylinder, air-cooled, fuel-injected (SEP engine), 124cc"),
+                       new Printer()};
+                       
+                       for (Serviceable currentServiceable: serviceItems){
+                       performService(currentServiceable);
+                       System.out.println();
+                       }
    }
  }
