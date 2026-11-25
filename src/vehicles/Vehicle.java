@@ -1,3 +1,5 @@
+package vehicles;
+
 abstract public class Vehicle {
 
     private String brand;
@@ -15,10 +17,10 @@ abstract public class Vehicle {
         }
     }
     
-    abstract void moveForward();
-    abstract void moveBackward();
-    abstract void moveLeft();
-    abstract void moveRight();
+    public abstract void moveForward();
+    public abstract void moveBackward();
+    public abstract void moveLeft();
+    public abstract void moveRight();
     
     public String getBrand() {
         return brand;
