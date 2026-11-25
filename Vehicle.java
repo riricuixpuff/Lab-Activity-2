@@ -1,4 +1,4 @@
-public class Vehicle {
+abstract public class Vehicle {
 
     private String brand;
     private String model;
@@ -7,14 +7,19 @@ public class Vehicle {
     public Vehicle(String brand, String model, int year) {
         this.brand = brand;
         this.model = model;
-
+        
         if (year >= 1886 && year <= 2026) {
             this.year = year;
         } else {
             this.year = 2026;
         }
     }
-
+    
+    abstract void moveForward();
+    abstract void moveBackward();
+    abstract void moveLeft();
+    abstract void moveRight();
+    
     public String getBrand() {
         return brand;
     }
